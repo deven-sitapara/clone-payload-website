@@ -13,11 +13,20 @@ const Footer = () => {
         {/* Footer heading with background effect */}
         <div className="py-16 text-center">
           <h2 
-            className="text-6xl md:text-8xl font-bold footer-heading"
-            data-text="Payload"
+            className="text-4xl md:text-4xl font-bold footer-heading"
+            data-text="Deven Sitapara"
           >
-            Payload
+            Deven Sitapara
           </h2>
+          <p
+            className="text-1xl md:text-1xl font-bold "
+            data-text="Dont hasistate to contact me">
+            Dont hasistate to contact me <br/>
+            email@devens.me <br/>
+            WhatsApp: 91-9979907571<br/>
+            Skype: dev.srs 
+
+          </p>
         </div>
 
         {/* Footer columns with vertical rulers */}

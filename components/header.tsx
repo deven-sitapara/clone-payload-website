@@ -47,7 +47,7 @@ const Header = () => {
       {/* Announcement banner */}
       <div className="announcement-banner bg-background/80 backdrop-blur-sm py-2 px-4 text-center text-sm">
         <Link href="/whats-new" className="inline-flex items-center gap-2 hover:text-white/80 transition-colors">
-          <span className="font-mono">See what's new in 3.0</span>
+          <span className="font-mono">contat: email@devens.me</span>
           <ArrowRight size={14} />
         </Link>
       </div>
@@ -58,14 +58,13 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
-                <span className="text-2xl font-bold">Payload</span>
+                <span className="text-2xl font-bold">S Deven</span>
               </Link>
               <nav className="hidden md:ml-10 md:flex md:items-center md:space-x-8">
-                <NavLink href="/features">Features</NavLink>
-                <NavLink href="/docs">Documentation</NavLink>
-                <NavLink href="/pricing">Pricing</NavLink>
-                <NavLink href="/blog">Blog</NavLink>
-                <NavLink href="/community" hasDropdown>Community</NavLink>
+                <NavLink href="/features">Services</NavLink>
+                <NavLink href="/docs">Projects</NavLink>
+                <NavLink href="/blog" hasDropdown>Blog</NavLink>
+                <NavLink href="/community" >Contact</NavLink>
               </nav>
             </div>
             <div className="hidden md:flex md:items-center md:space-x-4">
