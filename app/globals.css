@@ -132,7 +132,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -145,8 +145,8 @@
 .brand-item::after {
   content: '+';
   position: absolute;
-  bottom: -13px;
-  right: -7px;
+  bottom: -14.2px;
+  right: -6.2px;
   font-size: 20px;
   opacity: 0.5;
   z-index: 1;

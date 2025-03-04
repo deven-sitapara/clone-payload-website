@@ -16,7 +16,7 @@ const Footer = () => {
             className="text-4xl md:text-4xl font-bold footer-heading"
             data-text="Deven Sitapara"
           >
-            Deven Sitapara
+            S Deven
           </h2>
           <p
             className="text-1xl md:text-1xl font-bold "
