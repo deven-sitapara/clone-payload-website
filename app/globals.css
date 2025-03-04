@@ -422,13 +422,48 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: -1;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  opacity: 0.15;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.footer-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-background-text {
+  font-size: 18vw;
+  font-weight: 900;
+  color: white;
+  white-space: nowrap;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  letter-spacing: -0.05em;
+}
+
+.footer-container:hover .footer-background {
+  opacity: 0.08;
+  transform: scale(1.05);
+}
+
+.footer-container:hover .footer-background-text {
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Add touch effect for mobile devices */
+@media (max-width: 768px) {
+  .footer-background {
+    opacity: 0.12;
+  }
+  
+  .footer-background-text {
+    font-size: 24vw;
+  }
 }
 
 .footer-container:hover .footer-background {
@@ -573,4 +608,64 @@
   100% {
     transform: translateX(100%);
   }
+}
+
+/* Fix for horizontal scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Updated contact form styling */
+.contact-form-wrapper {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.contact-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.contact-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.8s ease;
+}
+
+.contact-button:hover::after {
+  left: 100%;
+}
+
+/* Add a subtle gradient to the form fields on focus */
+.contact-form-wrapper input:focus,
+.contact-form-wrapper textarea:focus {
+  background: linear-gradient(rgba(255, 255, 255, 0.03), transparent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }

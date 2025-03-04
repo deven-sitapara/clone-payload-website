@@ -1,32 +1,107 @@
 import Link from 'next/link'
-import { Github, Twitter, Linkedin, Youtube, ArrowRight, Sun } from 'lucide-react'
+import { Github, Twitter, Linkedin, Youtube, ArrowRight, Sun, Mail, Phone, Send } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer className="bg-black border-t border-white/10 relative">
+    <footer className="border-t border-white/10 relative overflow-hidden">
       <div className="footer-container relative">
         {/* Large background text */}
         <div className="footer-background">
-          <div className="footer-background-text">Payload</div>
+          <div className="footer-background-text">S Deven</div>
         </div>
         
-        {/* Footer heading with background effect */}
-        <div className="py-16 text-center">
-          <h2 
-            className="text-4xl md:text-4xl font-bold footer-heading"
-            data-text="Deven Sitapara"
-          >
-            S Deven
-          </h2>
-          <p
-            className="text-1xl md:text-1xl font-bold "
-            data-text="Dont hasistate to contact me">
-            Dont hasistate to contact me <br/>
-            email@devens.me <br/>
-            WhatsApp: 91-9979907571<br/>
-            Skype: dev.srs 
-
-          </p>
+        {/* Footer heading with professional black background */}
+        <div className="bg-black py-16 px-4 md:px-8">
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left column - Title and info */}
+              <div className="text-left">
+                <h2 
+                  className="text-4xl md:text-5xl font-bold footer-heading mb-6"
+                  data-text="Deven Sitapara"
+                >
+                  S Deven
+                </h2>
+                <p className="text-lg text-white/80 mb-8 max-w-md">
+                  I'm always open to discussing product design work or partnership opportunities.
+                </p>
+                <div className="flex flex-col gap-4 mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <Mail size={18} className="text-white/80" />
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-wider text-white/50">Email</p>
+                      <a href="mailto:email@devens.me" className="text-white hover:text-white/80 transition-colors">
+                        email@devens.me
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <Phone size={18} className="text-white/80" />
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-wider text-white/50">Phone</p>
+                      <a href="tel:+919979907571" className="text-white hover:text-white/80 transition-colors">
+                        +91 9979 907 571
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="social-icons">
+                  <Link href="https://twitter.com" className="social-icon">
+                    <Twitter size={16} />
+                  </Link>
+                  <Link href="https://github.com" className="social-icon">
+                    <Github size={16} />
+                  </Link>
+                  <Link href="https://linkedin.com" className="social-icon">
+                    <Linkedin size={16} />
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Right column - Contact form */}
+              <div className="contact-form-wrapper">
+                <h3 className="footer-heading mb-6">Ping me</h3>
+                <form className="space-y-4">
+                  <div>
+                    <input 
+                      type="text" 
+                      placeholder="Your Name" 
+                      className="w-full bg-transparent border border-white/20 rounded py-2.5 px-4 focus:border-white/40 focus:outline-none transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <input 
+                      type="email" 
+                      placeholder="Your Email" 
+                      className="w-full bg-transparent border border-white/20 rounded py-2.5 px-4 focus:border-white/40 focus:outline-none transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <textarea 
+                      placeholder="Your Message" 
+                      rows={4}
+                      className="w-full bg-transparent border border-white/20 rounded py-2.5 px-4 focus:border-white/40 focus:outline-none transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <button 
+                      type="submit" 
+                      className="contact-button px-6 py-3 rounded blue-button w-full flex items-center justify-center gap-2"
+                    >
+                      <span className="text-white">Send Message</span>
+                      <Send size={16} className="text-white" />
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Footer columns with vertical rulers */}
