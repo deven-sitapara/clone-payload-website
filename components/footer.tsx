@@ -23,7 +23,7 @@ const Footer = () => {
                   S Deven
                 </h2>
                 <p className="text-lg text-white/80 mb-8 max-w-md">
-                  I'm always open to discussing product design work or partnership opportunities.
+                  I'm always open to discussing product requirement or partnership opportunities.
                 </p>
                 <div className="flex flex-col gap-4 mb-8">
                   <div className="flex items-center gap-3">
