@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -23,8 +22,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Night cloth background with animation */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="night-cloth"></div>
-        <div className="night-stars"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_0%,rgba(0,0,0,0.8)_100%)] opacity-50 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] bg-[length:50px_50px] opacity-10 pointer-events-none"></div>
         <motion.div 
           className="absolute inset-0"
           animate={{ 
@@ -45,7 +44,8 @@ const Header = () => {
       </div>
 
       {/* Announcement banner */}
-      <div className="announcement-banner bg-background/80 backdrop-blur-sm py-2 px-4 text-center text-sm">
+      <div className="relative overflow-hidden border border-white/10 bg-background/80 backdrop-blur-sm py-2 px-4 text-center text-sm">
+        <div className="absolute top-0 left-[-100%] w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-[slide_3s_linear_infinite]"></div>
         <Link href="/whats-new" className="inline-flex items-center gap-2 hover:text-white/80 transition-colors">
           <span className="font-mono">contat: email@devens.me</span>
           <ArrowRight size={14} />
@@ -71,8 +71,13 @@ const Header = () => {
               <Link href="/demo" className="px-4 py-2 rounded-md border border-white/20 hover:border-white/40 transition-colors">
                 Schedule a demo
               </Link>
-              <Link href="/get-started" className="px-4 py-2 rounded-md blue-button">
-                <span className="text-white">Get started</span>
+              <Link 
+                href="/get-started"
+                className="relative px-4 py-2 rounded-md overflow-hidden z-10 group"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600/80 -z-10"></span>
+                <span className="absolute top-0 left-0 w-0 h-full bg-black/20 transition-all duration-300 ease-out group-hover:w-full -z-10"></span>
+                <span className="text-white relative z-10">Get started</span>
               </Link>
             </div>
             <div className="flex md:hidden">
@@ -100,8 +105,13 @@ const Header = () => {
             <Link href="/demo" className="block px-3 py-2 rounded-md border border-white/20 text-center">
               Schedule a demo
             </Link>
-            <Link href="/get-started" className="block px-3 py-2 rounded-md blue-button text-center">
-              <span className="text-white">Get started</span>
+            <Link 
+              href="/get-started" 
+              className="block px-3 py-2 rounded-md text-center relative overflow-hidden z-10 group"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600/80 -z-10"></span>
+              <span className="absolute top-0 left-0 w-0 h-full bg-black/20 transition-all duration-300 ease-out group-hover:w-full -z-10"></span>
+              <span className="text-white relative z-10">Get started</span>
             </Link>
           </div>
         </div>
