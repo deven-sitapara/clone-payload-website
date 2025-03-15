@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link'
-import { Github, Twitter, Linkedin, Youtube, ArrowRight, Sun, Mail, Phone, Send, X } from 'lucide-react'
+import { Github, Twitter, Linkedin, Youtube, Sun, Mail, Phone, X } from 'lucide-react'
 import Form from '@/form';
 import StayConnected from '@/stayConnected';
 
