@@ -5,6 +5,18 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react'
 
+// Add proper TypeScript interfaces
+interface NavLinkProps {
+  href: string;
+  children: React.ReactNode;
+  hasDropdown?: boolean;
+}
+
+interface MobileNavLinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -18,6 +30,11 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Extract inline handler to named function with "handle" prefix
+  const handleToggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+  
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       {/* Night cloth background with animation */}
@@ -84,7 +101,9 @@ const Header = () => {
               <button
                 type="button"
                 className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                onClick={handleToggleMobileMenu}
+                aria-expanded={mobileMenuOpen}
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -120,7 +139,7 @@ const Header = () => {
   )
 }
 
-const NavLink = ({ href, children, hasDropdown = false }) => (
+const NavLink = ({ href, children, hasDropdown = false }: NavLinkProps) => (
   <Link 
     href={href}
     className="text-white/80 hover:text-white px-3 py-2 text-sm font-medium transition-colors flex items-center"
@@ -130,7 +149,7 @@ const NavLink = ({ href, children, hasDropdown = false }) => (
   </Link>
 )
 
-const MobileNavLink = ({ href, children }) => (
+const MobileNavLink = ({ href, children }: MobileNavLinkProps) => (
   <Link 
     href={href}
     className="text-white/80 hover:text-white block px-3 py-2 text-base font-medium"

@@ -1,10 +1,24 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client"
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, Database, Code, Layers, Settings, Users, Shield, ExternalLink } from 'lucide-react'
+import { ArrowRight, Database, Code, ExternalLink } from 'lucide-react'
+
+// Add proper TypeScript interfaces
+interface Company {
+  name: string;
+  logo: string;
+}
+
+interface Skill {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  image: string;
+}
 
 export default function Home() {
   const [activeFeature, setActiveFeature] = useState(0)
@@ -17,54 +31,58 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [])
 
+  // Extract inline handler to named function with "handle" prefix
+  const handleFeatureHover = (index: number) => {
+    setActiveFeature(index)
+  }
+
   return (
     <div className="flex flex-col">
       {/* Hero section */}
-      <section className="pt-40 pb-20 relative overflow-hidden">
+      <section className="relative pt-40 pb-20 overflow-hidden">
         {/* Grid background - replaced with Tailwind utility classes */}
         <div className="absolute inset-0 bg-[length:50px_50px] bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)]"></div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container relative z-10 px-4 mx-auto sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+              className="mb-6 text-4xl font-bold md:text-6xl lg:text-7xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              Software Consultant
+              Software Development Consultant
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl text-white/70 mb-10"
+              className="mb-10 text-xl md:text-2xl text-white/70"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              🚀 Building Scalable & High-Performance Solutions with Modern Web Technologies.  
-              
+            >      
+              Supporting teams with practical web technology solutions.
             </motion.p>
             <motion.p 
-              className="text-xl md:text-sm text-white mb-10"
+              className="mb-10 text-xl text-white md:text-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="font-mono">
+              {/* <span className="font-mono">
                 Tech: PHP, Node.js, Python, PostgreSQL, MongoDB, AWS
-              </span>
+              </span> */}
              </motion.p>
             <motion.div 
-              className="flex flex-col sm:flex-row justify-center gap-4"
+              className="flex flex-col justify-center gap-4 sm:flex-row"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Link href="/contact" className="inline-flex items-center justify-center h-12 px-6 font-medium rounded-md relative overflow-hidden z-10 group bg-gradient-to-r from-blue-500 to-blue-600/80">
-                <span className="text-white relative z-10">Ping Me</span>
-                <ArrowRight size={16} className="ml-2 text-white relative z-10" />
-                <span className="absolute top-0 left-0 w-0 h-full bg-black/20 transition-all duration-300 ease-out group-hover:w-full -z-10"></span>
+              <Link href="/contact" className="relative z-10 inline-flex items-center justify-center h-12 px-6 overflow-hidden font-medium rounded-md group bg-gradient-to-r from-blue-500 to-blue-600/80">
+                <span className="relative z-10 text-white">Get in Touch</span>
+                <ArrowRight size={16} className="relative z-10 ml-2 text-white" />
+                <span className="absolute top-0 left-0 w-0 h-full transition-all duration-300 ease-out bg-black/20 group-hover:w-full -z-10"></span>
               </Link>
-              <Link href="/projects" className="inline-flex items-center justify-center h-12 px-6 font-medium rounded-md border border-white/20 hover:border-white/40 transition-colors">
+              <Link href="/projects" className="inline-flex items-center justify-center h-12 px-6 font-medium transition-colors border rounded-md border-white/20 hover:border-white/40">
                 <span>View Projects</span>
                 <ExternalLink size={16} className="ml-2" />
               </Link>
@@ -75,15 +93,16 @@ export default function Home() {
 
       {/* Experience banner */}
       <section className="py-4 bg-black">
-        <div className="container mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div className="container px-4 py-6 mx-auto sm:px-6 lg:px-8">
           <div className="flex justify-center">    
-            <Link href="/experience" className="inline-flex items-center gap-2 py-2 px-4 rounded bg-black/50 text-white relative overflow-hidden">
-              <span className="font-mono">18+ Years of Wide Industry Experience</span>
-              <ArrowRight size={14} />
+            <Link href="/experience" className="relative inline-flex items-center gap-2 px-4 py-2 overflow-hidden text-white rounded bg-black/50">
+              <span className="font-mono">
+                Offering 18+ years of wide development experience
+              </span>
+              {/* <ArrowRight size={14} /> */}
               <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-[2px] bg-blue-500 -translate-x-full animate-[slide_2s_linear_infinite]"></div>
-                <div className="absolute right-0 top-0 w-[2px] h-full bg-blue-500 -translate-y-full animate-[slideVertical_2s_linear_infinite_0.5s]"></div>
-              </div>
+                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 -translate-x-full animate-[slide_5s_linear_infinite]"></div>
+               </div>
             </Link>
           </div>
         </div>
@@ -91,12 +110,13 @@ export default function Home() {
 
       {/* Companies worked with */}
       <section className="py-4 bg-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-center mb-12">
-            Industries I've Worked With</h2>
+        <div className="container px-4 mx-auto sm:px-6 lg:px-8">
+          <h2 className="mb-12 text-2xl font-bold text-center">
+            Industries I've Supported
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[1px] bg-white/5 max-w-5xl mx-auto">
             {companies.map((company, index) => (
-              <div key={index} className="aspect-square flex items-center justify-center bg-black/10 relative transition-all hover:bg-black/60 border-r border-b border-white/5">
+              <div key={index} className="relative flex items-center justify-center transition-all border-b border-r aspect-square bg-black/10 hover:bg-black/60 border-white/5">
                 <Image 
                   src={company.logo} 
                   alt={company.name} 
@@ -104,7 +124,7 @@ export default function Home() {
                   height={100} 
                   className="object-contain"
                 />
-                <div className="absolute bottom-[-14.2px] right-[-6.2px] text-2xl opacity-50 z-10">+</div>
+                <div className="absolute bottom-[-10.2px] right-[-5.2px] text-l opacity-50 z-10">+</div>
               </div>
             ))}
           </div>
@@ -112,31 +132,34 @@ export default function Home() {
       </section>
 
       {/* Skills section */}
-      <section className="py-8 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Technical Services</h2>
+      <section className="relative py-8 overflow-hidden">
+        <div className="container px-4 mx-auto sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto mb-16 text-center">
+            <h2 className="mb-6 text-3xl font-bold md:text-5xl">
+            How I Can Help</h2>
             <p className="text-lg text-white/70">
-              Comprehensive skillset in modern software development and cloud technologies
-            </p>
+              Focus areas in software development and cloud solutions            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             {/* Skills tabs */}
             <div className="space-y-4">
               {skills.map((skill, index) => (
                 <div 
                   key={index}
                   className={`relative p-6 rounded-lg cursor-pointer transition-all hover:-translate-y-1 ${activeFeature === index ? 'bg-secondary' : 'bg-secondary/30 hover:bg-secondary/50'}`}
-                  onMouseOver={() => setActiveFeature(index)}
+                  onMouseOver={() => handleFeatureHover(index)}
+                  onFocus={() => handleFeatureHover(index)}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`View ${skill.title} details`}
                 >
                   <div className="flex items-start gap-4">
                     <div className="mt-1">
                       {skill.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-2">{skill.title}</h3>
+                      <h3 className="mb-2 text-xl font-bold">{skill.title}</h3>
                       <p className="text-white/70">{skill.description}</p>
                     </div>
                   </div>
@@ -170,7 +193,7 @@ export default function Home() {
   )
 }
 
-const companies = [
+const companies: Company[] = [
   {
     name: 'Ecommerce',
     logo: 'https://placehold.co/200x80/000000/FFFFFF?text=E-com.'
@@ -198,34 +221,34 @@ const companies = [
   // Add other companies you've worked with
 ]
 
-const skills = [
+const skills: Skill[] = [
   {
     title: 'Web Application Software',
-    description: 'Enhance workflow with custom web applications that improve efficiency, scalability, and user experience. Streamline operations, boost productivity, and integrate seamlessly with your existing systems.',
+    description: 'Building web applications focused on workflow efficiency and user experience. Designed to work well with your existing systems',
     icon: <Code size={24} className="text-blue-500" />,
     image: 'https://img.freepik.com/premium-vector/ui-ux-infographic-dashboard-ui-design-with-graphs-charts-diagrams-web-interface-template_110554-795.jpg?w=700' // Team working on web app interface
   },
   {
     title: 'SaaS Solutions',
-    description: 'Develop scalable and secure SaaS platforms with Node.js and Express, offering seamless service delivery, enhanced performance, and easy maintenance.',
+    description: 'Creating reliable SaaS platforms using Node.js and Express, with attention to security and maintainability.',
     icon: <Database size={24} className="text-blue-500" />,
     image: 'https://img.freepik.com/premium-vector/abstract-technology-saas-illustration_23-2149237077.jpg?w=700' // Cloud infrastructure diagram
   },
   {
     title: 'Customized ERP Software',
-    description: 'Create tailored ERP systems that optimize business operations, enhance efficiency, and integrate smoothly with your current infrastructure.',
+    description: 'Working on ERP solutions that aim to simplify business operations and connect with your existing tools.',
     icon: <Database size={24} className="text-blue-500" />,
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f' // Business workflow dashboard
   },
   {
     title: 'Automation Software Development',
-    description: 'Boost productivity with custom automation solutions that streamline repetitive tasks, improve workflows, and save time.',
+    description: 'Developing automation tools to help with repetitive tasks and improve daily workflows.',
     icon: <Database size={24} className="text-blue-500" />,
     image: 'https://img.freepik.com/free-vector/programmer-concept-illustration_114360-2284.jpg?&w=710' // Industrial robot or factory automation
   },
   {
     title: 'AI-Powered Software Solutions',
-    description: 'Harness AI to make smarter decisions, enhance user experiences, and drive innovative solutions with custom-built AI software.',
+    description: 'Implementing AI capabilities to assist with decision-making and improve user experiences.',
     icon: <Database size={24} className="text-blue-500" />,
     image: 'https://img.freepik.com/premium-vector/robotic-cloud-computing-with-engineers_175634-28327.jpg?w=700' // Neural network or AI dashboard
   }

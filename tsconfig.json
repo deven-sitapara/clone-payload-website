@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    // Target compatibility
+    "target": "es2022",  // Updated from es5 to a more modern target
+    
+    // Library support
     "lib": ["dom", "dom.iterable", "esnext"],
+    
+    // JavaScript and module settings
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -11,17 +16,43 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    
+    // React and Next.js specific
     "jsx": "preserve",
     "incremental": true,
+    
+    // Next.js plugin
     "plugins": [
       {
         "name": "next"
       }
     ],
+    
+    // Path aliases
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    
+    // Additional recommended strictness
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts", 
+    "**/*.ts", 
+    "**/*.tsx", 
+    ".next/types/**/*.ts",
+    "**/*.js",  // Added to support JavaScript files
+    "**/*.jsx"  // Added to support JSX files
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out",
+    "public"
+  ]
 }
