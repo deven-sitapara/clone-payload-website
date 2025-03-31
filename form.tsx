@@ -32,57 +32,66 @@ export default function Form() {
         }))
       }
   return (
-    <form className="space-y-4" onSubmit={handleSubmitForm}>
-                    <div>
-                      <label htmlFor="name" className="sr-only">Your Name</label>
-                      <input 
-                        id="name"
-                        name="name"
-                        type="text" 
-                        placeholder="Your Name" 
-                        value={formData.name}
-                        onChange={handleFormChange}
-                        className="w-full bg-transparent border border-white/20 rounded py-2.5 px-4 focus:border-white/40 focus:outline-none transition-colors focus:bg-gradient-to-b focus:from-white/[0.03] focus:to-transparent focus:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="sr-only">Your Email</label>
-                      <input 
-                        id="email"
-                        name="email"
-                        type="email" 
-                        placeholder="Your Email" 
-                        value={formData.email}
-                        onChange={handleFormChange}
-                        className="w-full bg-transparent border border-white/20 rounded py-2.5 px-4 focus:border-white/40 focus:outline-none transition-colors focus:bg-gradient-to-b focus:from-white/[0.03] focus:to-transparent focus:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="sr-only">Your Message</label>
-                      <textarea 
-                        id="message"
-                        name="message"
-                        placeholder="Your Message" 
-                        rows={4}
-                        value={formData.message}
-                        onChange={handleFormChange}
-                        className="w-full bg-transparent border border-white/20 rounded py-2.5 px-4 focus:border-white/40 focus:outline-none transition-colors focus:bg-gradient-to-b focus:from-white/[0.03] focus:to-transparent focus:shadow-[0_4px_12px_rgba(0,0,0,0.1)]"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <button 
-                        type="submit" 
-                        className="relative z-10 flex items-center justify-center w-full gap-2 px-6 py-3 overflow-hidden rounded bg-gradient-to-r from-blue-500 to-blue-600/80"
-                        aria-label="Send message"
-                      >
-                        <span className="relative z-10 text-white">Send Message</span>
-                        <Send size={16} className="relative z-10 text-white" />
-                        <span className="absolute top-0 left-0 w-0 h-full transition-all duration-300 ease-out bg-black/20"></span>
-                      </button>
-                    </div>
-                  </form>
+    
+      <form className="  relative   " onSubmit={handleSubmitForm}>
+        <div className="flex flex-col gap-2 pt-0">
+          <label htmlFor="name" className="flex items-center">
+            Name <span className="text-red-500 ml-0.5">*</span>
+          </label>
+          <input 
+            id="name"
+            name="name"
+            type="text" 
+            placeholder="Your Name" 
+            value={formData.name}
+            onChange={handleFormChange}
+            required
+            className="h-12 border-gray-300 w-full bg-transparent border border-white/15 rounded-md px-4 py-3 text-white placeholder:text-white/50"
+          />
+        </div>
+ 
+        <div className="flex flex-col gap-2 pt-2">
+          <label htmlFor="email" className="flex items-center">
+            Email <span className="text-red-500 ml-0.5">*</span>
+          </label>
+          <input 
+            id="email"
+            name="email"
+            type="email" 
+            placeholder="Your Email" 
+            value={formData.email}
+            onChange={handleFormChange}
+            required
+            className="h-12 border-gray-300 w-full bg-transparent border border-white/15 rounded-md px-4 text-white placeholder:text-white/50"
+          />
+        </div>
+        <div className="flex flex-col gap-2 pt-2">
+          <label htmlFor="message" className="flex items-center">
+            Message <span className="text-red-500 ml-0.5">*</span>
+          </label>
+          <textarea 
+            id="message"
+            name="message"
+            placeholder="Your Message" 
+            rows={4}
+            value={formData.message}
+            onChange={handleFormChange}
+            required
+            className=" w-full bg-transparent border border-white/15 rounded-md px-4 py-3 text-white placeholder:text-white/50 resize-none"
+          />
+        </div>
+      <div className="flex flex-col gap-2 pt-4">
+
+        <button 
+          type="submit" 
+          className="bg-black text-white hover:bg-black/90   px-5 w-auto flex items-center justify-center rounded-md"
+          aria-label="Send message"
+        >
+            Send Message <Send className="ml-2 h-4 w-4" />
+            </button>
+      </div>
+        
+      </form>
+    
   );
 }

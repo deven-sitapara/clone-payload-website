@@ -43,8 +43,8 @@ const Footer = () => {
                       </div>
                       <div>
                         <p className="text-xs tracking-wider uppercase text-white/50">Email</p>
-                        <a href="mailto:email@devens.me" className="text-white transition-colors hover:text-white/80">
-                          email@devens.me
+                        <a href="mailto:hello@devens.me" className="text-white transition-colors hover:text-white/80">
+                          hello@devens.me
                         </a>
                       </div>
                     </div>
@@ -76,12 +76,14 @@ const Footer = () => {
                 </div>
                 
                 {/* Right column - Contact form */}
-                <div className="relative bg-white/[0.03] rounded-lg p-8 border border-white/10 backdrop-blur-md transition-all hover:-translate-y-1 hover:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)]">
-                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                <div className="w-full max-w-md mx-auto px-4 relative bg-white/[0.03] rounded-lg p-8 border border-white/10 backdrop-blur-md 
+                transition-all  ">
+                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r  "></div>
                   <h3 className="mb-6 text-xs font-medium tracking-widest uppercase text-white/50">Ping me</h3>
-                 
-                 <Form></Form>
-                </div>
+                 <div className="flex flex-col gap-6">
+                   <Form></Form>
+                 </div>
+                 </div>
               </div>
             </div>
           </div>

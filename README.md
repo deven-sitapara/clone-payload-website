@@ -70,7 +70,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-For any inquiries, please reach out at: email@devens.me
+For any inquiries, please reach out at: hello@devens.me
 
 ## 🙏 Acknowledgments
 

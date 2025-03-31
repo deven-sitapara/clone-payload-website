@@ -64,7 +64,7 @@ const Header = () => {
       <div className="relative overflow-hidden border border-white/10 bg-background/80 backdrop-blur-sm py-2 px-4 text-center text-sm">
         <div className="absolute top-0 left-[-100%] w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-[slide_3s_linear_infinite]"></div>
         <Link href="/whats-new" className="inline-flex items-center gap-2 hover:text-white/80 transition-colors">
-          <span className="font-mono">contat: email@devens.me</span>
+          <span className="font-mono">contat: hello@devens.me</span>
           <ArrowRight size={14} />
         </Link>
       </div>
