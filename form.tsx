@@ -77,7 +77,7 @@ export default function Form() {
             value={formData.message}
             onChange={handleFormChange}
             required
-            className=" w-full bg-transparent border border-white/15 rounded-md px-4 py-3 text-white placeholder:text-white/50 resize-none"
+            className="   bg-transparent border border-white/15 rounded-md  px-4 py-3 pt-4  text-white placeholder:text-white/50  "
           />
         </div>
       <div className="flex flex-col gap-2 pt-4">

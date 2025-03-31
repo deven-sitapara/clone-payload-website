@@ -63,7 +63,7 @@ const Header = () => {
       {/* Announcement banner */}
       <div className="relative overflow-hidden border border-white/10 bg-background/80 backdrop-blur-sm py-2 px-4 text-center text-sm">
         <div className="absolute top-0 left-[-100%] w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-[slide_3s_linear_infinite]"></div>
-        <Link href="/whats-new" className="inline-flex items-center gap-2 hover:text-white/80 transition-colors">
+        <Link href="m" className="inline-flex items-center gap-2 hover:text-white/80 transition-colors">
           <span className="font-mono">contat: hello@devens.me</span>
           <ArrowRight size={14} />
         </Link>
@@ -78,18 +78,18 @@ const Header = () => {
                 <span className="text-2xl font-bold">S Deven</span>
               </Link>
               <nav className="hidden md:ml-10 md:flex md:items-center md:space-x-8">
-                <NavLink href="/features">Services</NavLink>
-                <NavLink href="/docs">Projects</NavLink>
-                <NavLink href="/blog" hasDropdown>Blog</NavLink>
-                <NavLink href="/community" >Contact</NavLink>
+                <NavLink href="/">Services</NavLink>
+                <NavLink href="/">Projects</NavLink>
+                <NavLink href="/" hasDropdown>Blog</NavLink>
+                <NavLink href="/" >Contact</NavLink>
               </nav>
             </div>
             <div className="hidden md:flex md:items-center md:space-x-4">
-              <Link href="/demo" className="px-4 py-2 rounded-md border border-white/20 hover:border-white/40 transition-colors">
+              <Link href="mailto:hello@devens.me" className="px-4 py-2 rounded-md border border-white/20 hover:border-white/40 transition-colors">
                 Schedule a demo
               </Link>
               <Link 
-                href="/get-started"
+                href="/"
                 className="relative px-4 py-2 rounded-md overflow-hidden z-10 group"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600/80 -z-10"></span>
@@ -115,17 +115,17 @@ const Header = () => {
       {/* Mobile menu */}
       <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/95 backdrop-blur-md border-b border-white/10">
-          <MobileNavLink href="/features">Features</MobileNavLink>
-          <MobileNavLink href="/docs">Documentation</MobileNavLink>
-          <MobileNavLink href="/pricing">Pricing</MobileNavLink>
-          <MobileNavLink href="/blog">Blog</MobileNavLink>
-          <MobileNavLink href="/community">Community</MobileNavLink>
+          <MobileNavLink href="/">Features</MobileNavLink>
+          <MobileNavLink href="/">Documentation</MobileNavLink>
+          <MobileNavLink href="/">Pricing</MobileNavLink>
+          <MobileNavLink href="/">Blog</MobileNavLink>
+          <MobileNavLink href="/">Community</MobileNavLink>
           <div className="pt-4 flex flex-col space-y-3">
-            <Link href="/demo" className="block px-3 py-2 rounded-md border border-white/20 text-center">
+            <Link href="/" className="block px-3 py-2 rounded-md border border-white/20 text-center">
               Schedule a demo
             </Link>
             <Link 
-              href="/get-started" 
+              href="/" 
               className="block px-3 py-2 rounded-md text-center relative overflow-hidden z-10 group"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600/80 -z-10"></span>

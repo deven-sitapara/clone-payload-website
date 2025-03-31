@@ -77,12 +77,12 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Link href="/contact" className="relative z-10 inline-flex items-center justify-center h-12 px-6 overflow-hidden font-medium rounded-md group bg-gradient-to-r from-blue-500 to-blue-600/80">
+              <Link href="/" className="relative z-10 inline-flex items-center justify-center h-12 px-6 overflow-hidden font-medium rounded-md group bg-gradient-to-r from-blue-500 to-blue-600/80">
                 <span className="relative z-10 text-white">Get in Touch</span>
                 <ArrowRight size={16} className="relative z-10 ml-2 text-white" />
                 <span className="absolute top-0 left-0 w-0 h-full transition-all duration-300 ease-out bg-black/20 group-hover:w-full -z-10"></span>
               </Link>
-              <Link href="/projects" className="inline-flex items-center justify-center h-12 px-6 font-medium transition-colors border rounded-md border-white/20 hover:border-white/40">
+              <Link href="/" className="inline-flex items-center justify-center h-12 px-6 font-medium transition-colors border rounded-md border-white/20 hover:border-white/40">
                 <span>View Projects</span>
                 <ExternalLink size={16} className="ml-2" />
               </Link>
@@ -95,7 +95,7 @@ export default function Home() {
       <section className="py-4 bg-black">
         <div className="container px-4 py-6 mx-auto sm:px-6 lg:px-8">
           <div className="flex justify-center">    
-            <Link href="/experience" className="relative inline-flex items-center gap-2 px-4 py-2 overflow-hidden text-white rounded bg-black/50">
+            <Link href="/" className="relative inline-flex items-center gap-2 px-4 py-2 overflow-hidden text-white rounded bg-black/50">
               <span className="font-mono">
                 Offering 18+ years of wide development experience
               </span>
@@ -114,7 +114,7 @@ export default function Home() {
           <h2 className="mb-12 text-2xl font-bold text-center">
             Industries I've Supported
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[1px] bg-white/5 max-w-5xl mx-auto">
+          <div className="flex flex-wrap gap-4 justify-center">
             {companies.map((company, index) => (
               <div key={index} className="relative flex items-center justify-center transition-all border-b border-r aspect-square bg-black/10 hover:bg-black/60 border-white/5">
                 <Image 
@@ -217,6 +217,10 @@ const companies: Company[] = [
   {
     name: 'Hospitality',
     logo: 'https://placehold.co/200x80/000000/FFFFFF?text=Hospitality'
+  },
+  {
+    name: 'LegalTech',
+    logo: 'https://placehold.co/200x80/000000/FFFFFF?text=LegalTech'
   },
   // Add other companies you've worked with
 ]

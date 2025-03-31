@@ -63,13 +63,13 @@ const Footer = () => {
                   </div>
                   
                   <div className="flex gap-4 mt-6">
-                    <Link href="https://twitter.com" className="flex items-center justify-center w-8 h-8 transition-colors rounded-full bg-white/10 hover:bg-white/20">
+                    <Link href="https://twitter.com/deven_sitapara" className="flex items-center justify-center w-8 h-8 transition-colors rounded-full bg-white/10 hover:bg-white/20">
                       <X size={16} />
                     </Link>
-                    <Link href="https://github.com" className="flex items-center justify-center w-8 h-8 transition-colors rounded-full bg-white/10 hover:bg-white/20">
+                    <Link href="https://github.com/deven-sitapara" className="flex items-center justify-center w-8 h-8 transition-colors rounded-full bg-white/10 hover:bg-white/20">
                       <Github size={16} />
                     </Link>
-                    <Link href="https://linkedin.com" className="flex items-center justify-center w-8 h-8 transition-colors rounded-full bg-white/10 hover:bg-white/20">
+                    <Link href="https://linkedin.com/in/deven-sitapara" className="flex items-center justify-center w-8 h-8 transition-colors rounded-full bg-white/10 hover:bg-white/20">
                       <Linkedin size={16} />
                     </Link>
                   </div>
@@ -93,34 +93,34 @@ const Footer = () => {
             <div className="p-8 border-r border-white/10 md:last:border-r-0 md:nth-child(2):border-r-0 lg:nth-child(2):border-r border-b border-white/10 md:border-b md:last:border-b-0">
               <h3 className="mb-6 text-xs tracking-widest uppercase text-white/50">Use Cases</h3>
               <div className="flex flex-col gap-3">
-                <Link href="/cms" className="text-white transition-colors hover:text-white/70">Content Management System</Link>
-                <Link href="/enterprise" className="text-white transition-colors hover:text-white/70">Enterprise App Builder</Link>
-                <Link href="/ecommerce" className="text-white transition-colors hover:text-white/70">Headless E-Commerce</Link>
-                <Link href="/dam" className="text-white transition-colors hover:text-white/70">Digital Asset Management</Link>
+                <Link href="#" className="text-white transition-colors hover:text-white/70">Content Management System</Link>
+                <Link href="#" className="text-white transition-colors hover:text-white/70">Enterprise App</Link>
+                <Link href="#" className="text-white transition-colors hover:text-white/70">E-Commerce</Link>
+                <Link href="#" className="text-white transition-colors hover:text-white/70">SaaS Application</Link>
               </div>
             </div>
             
             <div className="p-8 border-b border-r border-white/10 md:last:border-r-0 lg:border-r md:border-b md:last:border-b-0">
-              <h3 className="mb-6 text-xs tracking-widest uppercase text-white/50">Developers</h3>
+              <h3 className="mb-6 text-xs tracking-widest uppercase text-white/50">Development</h3>
               <div className="flex flex-col gap-3">
-                <Link href="/cloud" className="text-white transition-colors hover:text-white/70">Payload Cloud</Link>
-                <Link href="/docs" className="text-white transition-colors hover:text-white/70">Documentation</Link>
-                <Link href="/community" className="text-white transition-colors hover:text-white/70">Community Help</Link>
-                <Link href="/roadmap" className="text-white transition-colors hover:text-white/70">Roadmap</Link>
-                <Link href="/templates" className="text-white transition-colors hover:text-white/70">Templates</Link>
-                <Link href="/releases" className="text-white transition-colors hover:text-white/70">Releases</Link>
+                <Link href="/" className="text-white transition-colors hover:text-white/70">Custom Software Development</Link>
+                <Link href="/" className="text-white transition-colors hover:text-white/70">Third Party Integration</Link>
+                <Link href="/" className="text-white transition-colors hover:text-white/70">Laravel Development</Link>
+                <Link href="/" className="text-white transition-colors hover:text-white/70">Nodejs Development</Link>
+                <Link href="/" className="text-white transition-colors hover:text-white/70">Python Development</Link>
+                <Link href="/" className="text-white transition-colors hover:text-white/70">Django Development</Link>
               </div>
             </div>
             
             <div className="p-8 border-r border-white/10 md:last:border-r-0 md:nth-child(4):border-r-0 border-b border-white/10 md:border-b md:last:border-b-0">
-              <h3 className="mb-6 text-xs tracking-widest uppercase text-white/50">Company</h3>
+              <h3 className="mb-6 text-xs tracking-widest uppercase text-white/50">Help</h3>
               <div className="flex flex-col gap-3">
-                <Link href="/pricing" className="text-white transition-colors hover:text-white/70">Pricing</Link>
-                <Link href="/enterprise" className="text-white transition-colors hover:text-white/70">Enterprise</Link>
-                <Link href="/case-studies" className="text-white transition-colors hover:text-white/70">Case Studies</Link>
-                <Link href="/partner" className="text-white transition-colors hover:text-white/70">Partner With Us</Link>
-                <Link href="/find-partner" className="text-white transition-colors hover:text-white/70">Find a Partner</Link>
-                <Link href="/blog" className="text-white transition-colors hover:text-white/70">Blog</Link>
+                <Link href="/" className="text-white transition-colors hover:text-white/70">Architecture</Link>
+                <Link href="/" className="text-white transition-colors hover:text-white/70">Support</Link>
+                <Link href="/-studies" className="text-white transition-colors hover:text-white/70">Optimization</Link>
+                <Link href="/" className="text-white transition-colors hover:text-white/70">Partner With Us</Link>
+                <Link href="/-partner" className="text-white transition-colors hover:text-white/70">Product Management</Link>
+                <Link href="/" className="text-white transition-colors hover:text-white/70">Consulting</Link>
               </div>
             </div>
             
