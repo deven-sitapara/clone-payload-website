@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  eslint: {
-    ignoreDuringBuilds: true,
+  output: "export", // This enables static export
+  images: {
+    unoptimized: true, // Needed if using next/image on static hosting
   },
-  images: { unoptimized: true },
 };
 
 module.exports = nextConfig;
