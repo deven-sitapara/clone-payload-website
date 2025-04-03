@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+interface SMTPError extends Error {
+    code?: string;
+    response?: string;
+}
+
 export const POST = async (request: Request) => {
     try {
         const { email } = await request.json();
@@ -33,11 +38,12 @@ export const POST = async (request: Request) => {
         try {
             await transporter.verify();
             console.log('SMTP connection verified successfully');
-        } catch (verifyError: any) {
-            console.error('SMTP connection verification failed:', verifyError);
+        } catch (verifyError: unknown) {
+            const error = verifyError as SMTPError;
+            console.error('SMTP connection verification failed:', error);
 
             // Handle specific authentication errors
-            if (verifyError.code === 'EAUTH') {
+            if (error.code === 'EAUTH') {
                 return NextResponse.json(
                     { error: 'Email authentication failed. Please check your email credentials.' },
                     { status: 500 }
@@ -70,12 +76,13 @@ export const POST = async (request: Request) => {
             { message: 'Subscription successful!' },
             { status: 200 }
         );
-    } catch (error) {
+    } catch (error: unknown) {
+        const err = error as SMTPError;
         console.error('Detailed error sending email:', {
-            error: error instanceof Error ? error.message : 'Unknown error',
-            stack: error instanceof Error ? error.stack : undefined,
-            code: error instanceof Error ? (error as any).code : undefined,
-            response: error instanceof Error ? (error as any).response : undefined,
+            error: err.message,
+            stack: err.stack,
+            code: err.code,
+            response: err.response,
         });
         return NextResponse.json(
             { error: 'Failed to process subscription. Please check server logs for details.' },
