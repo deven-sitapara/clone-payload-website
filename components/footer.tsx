@@ -55,7 +55,7 @@ const Footer = () => {
                       </div>
                       <div>
                         <p className="text-xs tracking-wider uppercase text-white/50">Phone</p>
-                        <a href="tel:+919979907571" className="text-white transition-colors hover:text-white/80">
+                        <a href="https://wa.link/7ri7tw" className="text-white transition-colors hover:text-white/80">
                           +91 9979 907 571
                         </a>
                       </div>
